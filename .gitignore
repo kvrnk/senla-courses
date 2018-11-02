@@ -1,0 +1,10 @@
+
+*.xml
+
+*.class
+
+*.idea
+
+*.iml
+
+out
