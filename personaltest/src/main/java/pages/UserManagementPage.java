@@ -26,6 +26,9 @@ public class UserManagementPage {
     private String validationError2 = "Should have at least 5 characters";
     private String validationError3 = "Should have at least 8 characters";
     private String validationError4 = "Please enter at least 8 characters.";
+    private String employeeName = "Fiona Grace";
+    private String userName = "Fiona.grace1111";
+    private String password = "123456789";
 
     public UserManagementPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -94,16 +97,16 @@ public class UserManagementPage {
 
     public void addUser() {
         inputFields.get(0).sendKeys(Keys.BACK_SPACE);
-        inputFields.get(0).sendKeys("Fiona Grace");
-        inputFields.get(2).sendKeys("Fiona.giu6624sss");
-        inputFields.get(4).sendKeys("123456789");
-        inputFields.get(5).sendKeys("123456789");
+        inputFields.get(0).sendKeys(employeeName);
+        inputFields.get(2).sendKeys(userName);
+        inputFields.get(4).sendKeys(password);
+        inputFields.get(5).sendKeys(password);
 
-        (new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(buttonSave));
+       // (new WebDriverWait(driver, 20)).until(ExpectedConditions.elementToBeClickable(buttonSave));
       //  waitForClickable(buttonSave);
         buttonSave.click();
 
-        (new WebDriverWait(driver, 10)).until(ExpectedConditions.visibilityOf(buttonAdd));
+       // (new WebDriverWait(driver, 10)).until(ExpectedConditions.visibilityOf(buttonAdd));
     }
 
     private void checkWithEmptyField() {

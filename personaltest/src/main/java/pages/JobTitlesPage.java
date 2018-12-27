@@ -47,12 +47,10 @@ public class JobTitlesPage {
             checkboxesOfTitles.get(1).click();
             checkboxesOfTitles.get(2).click();
             buttonDelete.click();
+            (new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(buttonOk));
+            buttonOk.click();
         } else {
             System.out.println("Not enough titles to remove");
         }
-
-        (new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(buttonOk));
-
-        buttonOk.click();
     }
 }
